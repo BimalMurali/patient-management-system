@@ -1,0 +1,43 @@
+Database=[] # used to store all patients details
+#function to add a patient
+def AddPatient():
+    patient=[]
+    reg=input("Enter the Registration Number of patient: ")
+    patient.append(reg)
+    Fname=input("Enter the first name of patient:")
+    patient.append(Fname)
+    Lname=input("Enter the last name of patient: ")
+    patient.append(Lname)
+    Gender=input("Enter your gender of patient : ")
+    patient.append(Gender)
+    Add=input("Enter your Address of patient: ")
+    patient.append(Add)
+    Phone=input("Enter the phone number of patient : ")
+    patient.append(Phone)
+    Database.append(patient)
+
+#funtion to view all patient deatils
+def ViewPatients():
+    count=1
+    for i in range(len(Database)):
+            print("Patient", count)
+            count=count+1
+            print("Registration Number is : ",Database[i][0])
+            print("First Name is : ",Database[i][1])
+            print("Last  Name is : ",Database[i][2])
+            print("Gender  is : ",Database[i][3])
+            print("Address is : ",Database[i][4])
+            print("Phone Number is : ",Database[i][5])
+            print('\n')
+choice=True
+while(choice):
+  print("Enter 1 for adding a patient :")
+  print("Enter 2 to view patient list :")
+  print("Enter 3 to exit : ")
+  option=int(input("Enter the option : "))
+  if option ==1 :
+      AddPatient()
+  elif option==2:
+      ViewPatients()
+  elif option==3:
+      choice=False
